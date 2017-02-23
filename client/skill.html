@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scoping</title>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+ <script src="https://use.fontawesome.com/debf96ae02.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/purl/2.3.1/purl.min.js"></script>
+</head>
+<body>
+<!-- GET TITLE QUERY -->
+    <h1 id="url">GET URL HERE</h1>
+    <a href="localhost:3000/lol?title=123+123"></a>
+    <button class="btn waves-effect waves-light" type="button" name="action" onclick="getQuery()">Go</button>
+    <a href="http://127.0.0.1:8080/meal.html"><button class="btn waves-effect waves-light" type="button" name="action">Meals</button></a>
+    
+<script type="text/javascript">
+function getQuery(){
+  console.log(window.location.href);
+  var url = purl(window.location.href);
+  document.getElementById('url').innerHTML = url.data.param.query.title
+}
+</script>
+</body>
+
+</html>

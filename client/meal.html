@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scoping</title>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+ <script src="https://use.fontawesome.com/debf96ae02.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/purl/2.3.1/purl.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+        <h1 id="meal">Random Meals Here</h1>
+        <button class="btn waves-effect waves-light" type="button" name="action" onclick="clickme()">Go</button>
+
+<script type="text/javascript">
+  function clickme(){
+    $.ajax({
+    url: "http://localhost:3000/meals",
+    method:"get",
+    success: function( result ) {
+
+// console.log(JSON.parse(parseResult));
+var parse_result = JSON.stringify(result)
+var array_result = JSON.parse(parse_result)
+
+localStorage.setItem("meals", array_result);
+
+var random = Math.floor(Math.random()*4)
+      document.getElementById('meal').innerHTML = array_result[random]
+    }
+  });
+  }
+
+</script>
+</body>
+
+</html>

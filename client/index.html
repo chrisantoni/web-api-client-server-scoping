@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scoping</title>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+ <script src="https://use.fontawesome.com/debf96ae02.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/purl/2.3.1/purl.min.js"></script>
+</head>
+<body>
+<!-- DATA HEADING -->
+    <h1 id="title" data-header="OH THIS TITLE CHALLENGING BY ME">THIS TITLE WILL BE CHANGE BY VALUE OF data-header</h1>
+    <button class="btn waves-effect waves-light" type="button" name="action" onclick="clickme()">Go</button>
+    <a href="http://127.0.0.1:8080/skill.html?title=capedeh"><button class="btn waves-effect waves-light" type="button" name="action">Skill</button></a>
+
+
+<script type="text/javascript">
+  function clickme(){
+     document.getElementById('title').innerHTML = document.getElementById('title').dataset.header
+  }
+
+</script>
+</body>
+
+</html>
